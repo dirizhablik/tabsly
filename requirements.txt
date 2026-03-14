@@ -1,0 +1,8 @@
+numpy>=1.26.4
+scipy>=1.11.4
+librosa>=0.10.2.post1
+soundfile>=0.12.1
+torch>=2.2.2
+torchcrepe>=0.0.23
+pretty_midi>=0.2.10
+pytest>=8.1.1

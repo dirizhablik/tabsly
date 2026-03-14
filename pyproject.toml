@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "guitartab-ai"
+version = "0.1.0"
+description = "Clean monophonic guitar audio to playable ASCII tablature."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "Codex" }
+]
+dependencies = [
+  "numpy>=1.26.4",
+  "scipy>=1.11.4",
+  "librosa>=0.10.2.post1",
+  "soundfile>=0.12.1",
+  "torch>=2.2.2",
+  "torchcrepe>=0.0.23",
+  "pretty_midi>=0.2.10",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.1.1",
+]
+
+[project.scripts]
+guitartab-ai = "guitartab_ai.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/guitartab_ai"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

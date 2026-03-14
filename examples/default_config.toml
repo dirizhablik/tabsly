@@ -1,0 +1,51 @@
+debug = true
+
+[audio]
+target_sample_rate = 16000
+mono = true
+normalize_peak = true
+resample_type = "soxr_hq"
+
+[pitch]
+backend = "torchcrepe"
+frame_hop_ms = 10.0
+fmin_hz = 70.0
+fmax_hz = 1400.0
+confidence_threshold = 0.35
+model_capacity = "full"
+batch_size = 2048
+device = "auto"
+median_filter_width = 5
+
+[notes]
+min_note_ms = 80.0
+max_gap_ms = 30.0
+merge_same_pitch_gap_ms = 45.0
+pitch_stability_frames = 3
+midi_smoothing_window = 5
+
+[fretboard]
+min_fret = 0
+max_fret = 20
+tuning = [40, 45, 50, 55, 59, 64]
+string_names = ["E2", "A2", "D3", "G3", "B3", "E4"]
+
+[optimizer]
+position_cost_weight = 0.08
+high_fret_penalty_weight = 0.12
+open_string_bonus = -0.15
+fret_distance_weight = 1.0
+string_change_weight = 0.35
+same_string_motion_weight = 0.15
+large_shift_threshold = 4
+large_shift_penalty_weight = 0.8
+repeated_note_position_change_penalty = 1.25
+string_cross_shift_weight = 0.12
+open_string_shift_relief = 0.75
+max_time_relief_s = 0.35
+time_relief_discount = 0.25
+
+[render]
+min_cell_width = 2
+note_spacing = 1
+include_note_listing = true
