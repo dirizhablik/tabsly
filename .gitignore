@@ -6,3 +6,4 @@ __pycache__/
 *.mid
 dist/
 build/
+.claude/settings.local.json
