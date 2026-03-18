@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "guitartab-ai CLI",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "guitartab_ai.transcribe"],
+      "port": null
+    },
+    {
+      "name": "pytest",
+      "runtimeExecutable": "pytest",
+      "runtimeArgs": [],
+      "port": null
+    }
+  ]
+}
